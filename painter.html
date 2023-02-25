@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Java Script</title>
+      </head>
+<body>
+<h1>Painter entry by Sai Supreeth</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="password">The hidden painter name </label>
+    <input type ="password" id="form1_password" name="password" min=10 max=50 step=2 value="monet"> <br>
+
+    <label for="form1_guess">Guess the painter</label>
+    <input type ="text" id="form1_guess" name="guess" autofocus> <br>
+
+    <button type="button" classs="btn" onclick="checkpainter()" value="Get values from form">
+        submit
+    </button>
+    <p id="result">This results will be replaced </p>
+</form>
+
+
+<script> 
+good = 0;
+oops = 0;
+function checkpainter(){
+    console.log("Check the guess")
+
+    password = document.getElementById("form1_password").value
+    guess = document.getElementById("form1_guess").value
+    confirmed = confirm("Are these the values same? "+password+" and "+guess)
+    
+    out = document.getElementById("result")
+    if(password == guess){
+        alert("you got it right")
+        good = good+1
+        out.innerHTML = "Correct answer: " + good + "wrong answer: " +oops;
+    } else {
+        alert("sorry")
+        oops = oops + 1
+        out.innerHTML = "Correct answer: " + good + "wrong answer: " +oops;
+    }
+}
+</script>
+
+</body>
+</html> 
