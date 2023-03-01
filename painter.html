@@ -10,17 +10,13 @@
 <form>
     <label for="password">The hidden painter name </label>
     <input type ="password" id="form1_password" name="password" min=10 max=50 step=2 value="monet"> <br>
-
     <label for="form1_guess">Guess the painter</label>
     <input type ="text" id="form1_guess" name="guess" autofocus> <br>
-
     <button type="button" classs="btn" onclick="checkpainter()" value="Get values from form">
         submit
     </button>
     <p id="result">This results will be replaced </p>
 </form>
-
-
 <script> 
 good = 0;
 oops = 0;
@@ -43,6 +39,31 @@ function checkpainter(){
     }
 }
 </script>
+<div class="container">
+    <img id="image" src="ABELIA_.jpg" alt = "abelia" width = "100px" height="100px" onclick="selectimage()">
+</div>
 
+<script>
+    var useImage = 1;
+
+    function selectimage()
+    {
+        switch(useImage)
+        {
+        case 1:
+            useImage = 2;
+            document.getElementById("image").src="Pachyphragma.jpg";
+            break;
+        case 2:
+            useImage = 3;
+            document.getElementById("image").src="SALIX.jpg";
+            break;
+        case 3:
+            useImage =1 ;
+            document.getElementById("image").src="ABELIA_.jpg";
+            break;
+    }
+}
+</script>
 </body>
 </html> 
