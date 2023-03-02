@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chocolates</title>
+      </head>
+<body>
+
+<h2>Supreeth chooses candy</h2>
+
+<form>
+    <input type="checkbox" id="dc" name="candy" value="true">
+    <label for="dc">Dark Chocolate</label> <br>
+ 
+    <input type="checkbox" id="nc" name="candy" value="true">
+    <label for="nc">Nuts</label> <br>
+
+    <input type="checkbox" id="cc" name="candy" value="false">
+    <label for="cc">Chewy</label> <br>
+
+    <input type="button" value="Select a box" onclick="selectBox()">
+</form>
+
+<form>
+    <label for="property">Enter the size</label>
+    <input type="text" id="property" name="property" value="size"> <br>
+    
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"> <br>
+
+    <input type="button" value="Update the box" onclick="updateBox()">
+</form>
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let my_candy_box={};
+function selectBox()
+    {
+        my_candy_box={};
+        let dc=document.getElementById("dc").checked
+        let nc=document.getElementById("nc").checked
+        let cc=document.getElementById("cc").checked
+        if(dc)
+        {
+            my_candy_box.dc = true;
+        }
+        else
+        {
+            my_candy_box.dc = false;
+        }
+        if(nc)
+        {
+            my_candy_box.nc = true;
+        }
+        else
+        {
+            my_candy_box.nc = false;
+        }
+        if(cc)
+        {
+            my_candy_box.cc = true;
+        }
+        else
+        {
+            my_candy_box.cc = false;
+        }
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+    } 
+
+    function updateBox()
+    {
+        let property=document.getElementById("property").value;
+        let price=document.getElementById("price").value;
+        my_candy_box["property"]=property;
+        my_candy_box["price"]=price;
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+    }
+</script>
+
+</body>
+</html> 
